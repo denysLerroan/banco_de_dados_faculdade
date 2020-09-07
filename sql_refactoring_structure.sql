@@ -3,8 +3,10 @@
 -- Alterar a tabela de ponto_tur, adicionando campos 'latitude' e 'longitude'.
 ALTER TABLE ponto_tur
 ADD coordenada POINT;
-INSERT INTO ponto_tur (coordenada) VALUES (POINT(1.32569772, 2.5879817));
-DESCRIBE gt.ponto_tur;
+INSERT INTO ponto_tur (nome,coordenada) VALUES ('Ponte da Amizade', POINT(1.32569772, 2.5879817));
+SELECT * FROM ponto_tur;
+-- visualizando as coordenadas
+SELECT *, AsText(coordenada) FROM ponto_tur;
 
 -- Alterar a tabela pais, adicionando uma nota de 0 a 10 com o nível de interesse para o turista
 ALTER TABLE pais
